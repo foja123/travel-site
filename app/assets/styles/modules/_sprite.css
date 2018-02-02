@@ -1,0 +1,72 @@
+
+
+
+        .icon {
+            background-image: url('/assets/images/sprites/sprite-d7af1f2b.svg');
+            display: inline-block;
+        }
+    .icon--clear-view-escapes {
+        width: 142.4px;
+        height: 59.53px;
+        background-position: 0 0;
+    }
+    .icon--comment {
+        width: 64px;
+        height: 64px;
+        background-position: 0 74.41566265060241%;
+    }
+    .icon--facebook {
+        width: 21.23px;
+        height: 42.01px;
+        background-position: 83.98095780607885% 56.41789456886004%;
+    }
+    .icon--fire {
+        width: 56px;
+        height: 64px;
+        background-position: 0 35.86144578313253%;
+    }
+    .icon--globe {
+        width: 64px;
+        height: 64px;
+        background-position: 27.586206896551722% 35.86144578313253%;
+    }
+    .icon--globe-2 {
+        width: 64px;
+        height: 64px;
+        background-position: 70.14778325123153% 0;
+    }
+    .icon--instagram {
+        width: 42.01px;
+        height: 42.01px;
+        background-position: 0 99.75530613330496%;
+    }
+    .icon--mail {
+        width: 64px;
+        height: 48px;
+        background-position: 70.14778325123153% 35.16483516483517%;
+    }
+    .icon--rain {
+        width: 64px;
+        height: 64px;
+        background-position: 31.527093596059114% 74.41566265060241%;
+    }
+    .icon--star {
+        width: 64px;
+        height: 64px;
+        background-position: 63.05418719211823% 74.41566265060241%;
+    }
+    .icon--twitter {
+        width: 51.78px;
+        height: 42.06px;
+        background-position: 95.9018678561472% 34.0534213046717%;
+    }
+    .icon--wifi {
+        width: 60px;
+        height: 64px;
+        background-position: 99.71014492753623% 0;
+    }
+    .icon--youtube {
+        width: 34.75px;
+        height: 42px;
+        background-position: 98.01076426264801% 56.41489361702128%;
+    }
