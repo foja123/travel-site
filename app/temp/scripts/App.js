@@ -74,9 +74,22 @@ var _Modal = __webpack_require__(1);
 
 var _Modal2 = _interopRequireDefault(_Modal);
 
+var _Text = __webpack_require__(3);
+
+var _Text2 = _interopRequireDefault(_Text);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var modal = new _Modal2.default();
+var modalContentFooter = new _Modal2.default("modal-content-footer", "open-modal-footer");
+var modalContentHeader = new _Modal2.default("modal-content-header", "open-modal-header");
+
+modalContentFooter.openModal();
+
+var text = new _Text2.default();
+
+var textToDisplay = text.toDisplay();
+
+//modal.populateModal(textToDisplay);
 
 /***/ }),
 /* 1 */
@@ -97,15 +110,19 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Modal = function () {
-    function Modal() {
+    function Modal(modalClass, openModal) {
         _classCallCheck(this, Modal);
 
-        console.log("im a modal");
-        this.openModalButton = (0, _jquery2.default)('.open-modal');
-        this.modal = (0, _jquery2.default)('.modal');
+        this.openModalButton = (0, _jquery2.default)('.' + openModal);
+        this.modal = (0, _jquery2.default)('.' + modalClass);
+        this.modalContent = (0, _jquery2.default)('.modal__content');
         this.closeModalButton = (0, _jquery2.default)('.modal__close');
 
         this.events();
@@ -114,10 +131,8 @@ var Modal = function () {
     _createClass(Modal, [{
         key: 'events',
         value: function events() {
-
             this.openModalButton.click(this.openModal.bind(this));
             this.closeModalButton.click(this.closeModal.bind(this));
-
             (0, _jquery2.default)(document).keyup(this.keyUpHandler.bind(this));
         }
     }, {
@@ -131,17 +146,39 @@ var Modal = function () {
         key: 'openModal',
         value: function openModal() {
             this.modal.addClass("modal--is-visible");
-            return false; // non fa scrollare il browser in alto se a far partire il metodo è un link
+            return false;
         }
     }, {
         key: 'closeModal',
         value: function closeModal() {
             this.modal.removeClass("modal--is-visible");
         }
+    }, {
+        key: 'emptyModal',
+        value: function emptyModal() {
+            this.modalContent.empty();
+        }
+    }, {
+        key: 'populateModal',
+        value: function populateModal(content) {
+            this.modalContent.html(content);
+        }
     }]);
 
     return Modal;
 }();
+
+var ModalDynamicContent = function (_Modal) {
+    _inherits(ModalDynamicContent, _Modal);
+
+    function ModalDynamicContent() {
+        _classCallCheck(this, ModalDynamicContent);
+
+        return _possibleConstructorReturn(this, (ModalDynamicContent.__proto__ || Object.getPrototypeOf(ModalDynamicContent)).apply(this, arguments));
+    }
+
+    return ModalDynamicContent;
+}(Modal);
 
 exports.default = Modal;
 
@@ -10515,6 +10552,38 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Text = function () {
+    function Text() {
+        _classCallCheck(this, Text);
+    }
+
+    _createClass(Text, [{
+        key: "toDisplay",
+        value: function toDisplay() {
+            return "un testo per la modale";
+        }
+    }]);
+
+    return Text;
+}();
+
+exports.default = Text;
 
 /***/ })
 /******/ ]);

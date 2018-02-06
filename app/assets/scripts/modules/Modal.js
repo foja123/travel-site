@@ -1,24 +1,24 @@
 import $ from 'jquery';
 
 class Modal {
-    constructor() {
-        console.log("im a modal");
-        this.openModalButton = $('.open-modal');
-        this.modal = $('.modal');
+    constructor(modalClass, openModal) {
+        
+        this.openModalButton = $('.'+ openModal);
+        this.modal = $('.'+ modalClass);
+        this.modalContent = $('.modal__content');
         this.closeModalButton = $('.modal__close');
         
+
         this.events();
+
     }
 
     events() {
-
         this.openModalButton.click(this.openModal.bind(this));
         this.closeModalButton.click(this.closeModal.bind(this));
-
         $(document).keyup(this.keyUpHandler.bind(this)); 
-        
     }
-
+ 
     keyUpHandler(e) {
         if(e.keyCode == 27) {
             this.closeModal();
@@ -27,12 +27,28 @@ class Modal {
 
     openModal() {
         this.modal.addClass("modal--is-visible");
-        return false; // non fa scrollare il browser in alto se a far partire il metodo è un link
+        return false;
     }
 
     closeModal() {
         this.modal.removeClass("modal--is-visible");
     }
+
+
+    emptyModal() {
+        this.modalContent.empty();
+    } 
+
+    populateModal(content) {
+        this.modalContent.html(content);
+    }
+
+}
+
+class ModalDynamicContent extends Modal  {
+
+
+
 }
 
 export default Modal;
