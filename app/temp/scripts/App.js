@@ -83,7 +83,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var modalContentFooter = new _Modal2.default("modal-content-footer", "open-modal-footer");
 var modalContentHeader = new _Modal2.default("modal-content-header", "open-modal-header");
 
-modalContentFooter.openModal();
+//modalContentFooter.openModal();
 
 var text = new _Text2.default();
 

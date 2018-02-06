@@ -5,7 +5,7 @@ var modalContentFooter = new Modal("modal-content-footer", "open-modal-footer");
 var modalContentHeader = new Modal("modal-content-header", "open-modal-header");
 
 
-modalContentFooter.openModal();
+//modalContentFooter.openModal();
 
 var text = new Text();
 
