@@ -16,3 +16,7 @@ img {
 a {
     color: $mainOrange;
 }
+
+.open-modal {
+    cursor:pointer;
+}
